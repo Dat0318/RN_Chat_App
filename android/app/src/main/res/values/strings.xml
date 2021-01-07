@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HeyU</string>
+    <string name="facebook_app_id">738795416694690</string>
+    <string name="fb_login_protocol_scheme">fb738795416694690</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "22722611146",
+    "firebase_url": "https://custompushingnoti.firebaseio.com",
+    "project_id": "custompushingnoti",
+    "storage_bucket": "custompushingnoti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22722611146:android:8216be67c28e743ce37133",
+        "android_client_info": {
+          "package_name": "com.nguyenanh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22722611146-1k45aikudpl8srfv0hmci12kosn2kjmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nguyenanh",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "22722611146-s1h4psjhq1nm7ee2hr3k4j7q6e5ntsm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQsi5JP4PmS7rj4F7vLLFyFEPI-m8nZgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22722611146-s1h4psjhq1nm7ee2hr3k4j7q6e5ntsm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
