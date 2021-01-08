@@ -4,6 +4,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import {InputCustom} from '@components/index';
 import {LoginStatus} from '@stores/index';
+import {
+  _signInGoogle,
+  _signInFacebook,
+  _signOutGoogle,
+  _signOutFacebook,
+} from '@common/index';
 
 export default function Login({navigation}) {
   const [email, onChangeEmail] = React.useState('');
@@ -31,6 +37,7 @@ export default function Login({navigation}) {
       onChangeRePassWord('');
     }
   };
+
   return (
     <LinearGradient
       colors={['#d90646', '#e22539', '#eb402c']}

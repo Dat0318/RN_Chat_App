@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {observer} from 'mobx-react';
@@ -56,30 +57,35 @@ export default class TodoListView extends Component {
           Tasks left: {list.unfinishedTodoCount}
         </TouchableOpacity> */}
         <Text>Name of example</Text>
-        <TouchableOpacity onPress={() => {
-          LoginStatus.changeStatus();
-        }}
-        style={{height: 30,
-                backgroundColor: 'lightblue',
-                width:"100%",
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 5,
-                marginTop: 15,}}>
+        <TouchableOpacity
+          onPress={() => {
+            LoginStatus.changeStatus();
+          }}
+          style={{
+            height: 30,
+            backgroundColor: 'lightblue',
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 5,
+            marginTop: 15,
+          }}>
           <Text>change status</Text>
         </TouchableOpacity>
 
-        
-        <TouchableOpacity onPress={() => {
-          LoginStatus.total();
-        }}
-        style={{height: 30,
-                backgroundColor: 'lightblue',
-                width:"100%",
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 5,
-                marginTop: 15,}}>
+        <TouchableOpacity
+          onPress={() => {
+            LoginStatus.total();
+          }}
+          style={{
+            height: 30,
+            backgroundColor: 'lightblue',
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 5,
+            marginTop: 15,
+          }}>
           <Text>change status</Text>
         </TouchableOpacity>
       </View>
@@ -87,7 +93,7 @@ export default class TodoListView extends Component {
   }
 }
 
-const TodoView = observer(({todo}) => (
+export const TodoView = observer(({todo}) => (
   <View>
     <Text>todo.finished</Text>
     {todo.title}

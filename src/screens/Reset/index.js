@@ -47,14 +47,6 @@ export default function Reset({navigation}) {
         accessToken,
       );
 
-      // const {scopes, idToken} = await GoogleSignin.signIn();
-      // console.log('accessToken: ', scopes, 'idToken: ', idToken);
-      // setLoggedIn(true);
-      // const credential = auth.GoogleAuthProvider.credential(
-      //   idToken,
-      //   scopes.serverAuthCode,
-      // );
-
       await auth().signInWithCredential(credential);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -107,11 +99,6 @@ export default function Reset({navigation}) {
     );
   };
 
-  const _logout = () => {
-    console.log('Logout here');
-    LoginManager.logOut();
-  };
-
   return (
     <View style={{backgroundColor: 'lightblue', flex: 1}}>
       <StatusBar barStyle="dark-content" />
@@ -148,33 +135,17 @@ export default function Reset({navigation}) {
             <View>
               <LoginButton
                 onLoginFinished={(error, result) => {
-                  // console.log('RESULT: ', result);
                   if (error) {
                     // console.log('login has error: ' + result.error);
                   } else if (result.isCancelled) {
                     // console.log('login is cancelled.');
                   } else {
-                    // console.log('Result: ', result);
                     AccessToken.getCurrentAccessToken().then((data) => {
-                      // console.log('Data: ', data);
                       // console.log(data.accessToken.toString());
                     });
                   }
                 }}
                 publishPermissions={['email']}
-                // onLoginFinished={(error, result) => {
-                //   if (error) {
-                //     console.log('Login failed with error: ' + error.message);
-                //   } else if (result.isCancelled) {
-                //     console.log('Login was cancelled');
-                //   } else {
-                //     console.log(
-                //       'Login was successful with permissions: ' +
-                //         result.grantedPermissions,
-                //     );
-                //   }
-                // }}
-                // onLogoutFinished={() => console.log('logout.')}
               />
             </View>
           </View>

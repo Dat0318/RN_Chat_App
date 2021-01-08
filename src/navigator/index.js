@@ -1,11 +1,21 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {Image} from 'react-native';
-import {Style, isViewIntro} from '@common/index';
+import {Style, getHeight} from '@common/index';
 import {Images} from '@config';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Login, Home, Chat, Reset} from '@screens/index';
+import {
+  Login,
+  Home,
+  Chat,
+  Reset,
+  Account,
+  Contacts,
+  Groups,
+  Booking,
+} from '@screens/index';
 import TabBar from './TabBar';
 import {observer} from 'mobx-react';
 import {LoginStatus} from '@stores/index';
@@ -19,8 +29,8 @@ const TabStackScreen = () => (
     lazy={true}
     tabBarPosition={'bottom'}
     tabBarOptions={{
-      activeTintColor: '#48d2ff',
-      inactiveTintColor: '#fff',
+      activeTintColor: '#de2961',
+      inactiveTintColor: '#b9b9b9',
     }}>
     <TabStack.Screen
       name={'Home'}
@@ -28,31 +38,53 @@ const TabStackScreen = () => (
       options={{
         tabBarIcon: ({color}) => (
           <Image
-            source={Images.ic_home}
+            source={Images.ic_chat}
             style={[Style.iconTabBottom, {tintColor: color}]}
           />
         ),
       }}
     />
     <TabStack.Screen
-      name={'Chat'}
-      component={Chat}
+      name={'Groups'}
+      component={Groups}
       options={{
         tabBarIcon: ({color}) => (
           <Image
-            source={Images.ic_hat}
+            source={Images.ic_people}
             style={[Style.iconTabBottom, {tintColor: color}]}
           />
         ),
       }}
     />
-    {/* <TabStack.Screen
-      name={'Contact'}
-      component={Login}
+    <TabStack.Screen
+      name={'Booking'}
+      component={Booking}
       options={{
         tabBarIcon: ({color}) => (
           <Image
-            source={Images.ic_ic_info}
+            source={Images.ic_plus}
+            style={[
+              Style.iconTabBottom,
+              {
+                width: getHeight(18),
+                height: getHeight(18),
+                position: 'absolute',
+                zIndex: 1,
+                top: getHeight(-5),
+                tintColor: color,
+              },
+            ]}
+          />
+        ),
+      }}
+    />
+    <TabStack.Screen
+      name={'Contacts'}
+      component={Contacts}
+      options={{
+        tabBarIcon: ({color}) => (
+          <Image
+            source={Images.ic_menu}
             style={[Style.iconTabBottom, {tintColor: color}]}
           />
         ),
@@ -60,16 +92,16 @@ const TabStackScreen = () => (
     />
     <TabStack.Screen
       name={'Profile'}
-      component={Login}
+      component={Account}
       options={{
         tabBarIcon: ({color}) => (
           <Image
-            source={Images.ic_profile}
+            source={Images.ic_person}
             style={[Style.iconTabBottom, {tintColor: color}]}
           />
         ),
       }}
-    /> */}
+    />
   </TabStack.Navigator>
 );
 const AuthStack = createStackNavigator();
@@ -97,6 +129,7 @@ class RootStack extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode={'none'}>
+          {/* <MainStack.Screen name={'Reset'} component={Reset} /> */}
           {LoginStatus.status === false ? (
             <Stack.Screen
               name={'AuthStackScreen'}

@@ -176,7 +176,7 @@ android {
                 def formattedDate = new Date().format('ddMMyyyy')
                 def flavor = variant.name
                 def versionName = variant.versionName
-                outputFileName = "heyU${formattedDate}-v${versionName}.apk"
+                outputFileName = "heyU_${formattedDate}-v${versionName}.apk"
                 // output -> ladies-nails17122020.apk
                 // outputFileName = "AppName_${versionName}_${flavor}_${formattedDate}.apk"
                 }

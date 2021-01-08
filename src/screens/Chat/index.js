@@ -230,9 +230,6 @@ function Chat({route}) {
   const [isLoadMore, setIsLoadMore] = useState(false);
   const [page, setPage] = useState(0);
   const [listMessages, setListMessages] = useState([]);
-  const [height, setHeight] = useState(0);
-  const [check, setCheck] = useState(true);
-  const [iconHeight, setIconHeight] = useState(0);
   const fadeAnim = new Animated.Value(1);
   const scrollY = new Animated.Value(0);
 

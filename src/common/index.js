@@ -22,6 +22,12 @@ import {
 import {Request} from './Request';
 import {Style, Colors, fontFamily} from './Style';
 import {Images} from '../config';
+import {
+  _signInGoogle,
+  _signInFacebook,
+  _signOutGoogle,
+  _signOutFacebook,
+} from './LoginSocial';
 import {Api} from './Api';
 import {
   getKeys,
@@ -96,4 +102,9 @@ export {
   checkMail,
   checkPhone,
   cleanObject,
+  // Login social
+  _signInGoogle,
+  _signInFacebook,
+  _signOutGoogle,
+  _signOutFacebook,
 };

@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {getHeight} from '@common/index';
+import {getHeight} from '@common';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
   },
   rectButton: {
     flex: 1,
@@ -71,20 +70,6 @@ const styles = StyleSheet.create({
     top: getHeight(2),
     right: getHeight(-2),
     zIndex: 1,
-  },
-  // test push notification
-  testPush: {
-    backgroundColor: '#e32538',
-    paddingHorizontal: getHeight(10),
-    paddingVertical: getHeight(10),
-    position: 'absolute',
-    borderRadius: getHeight(10),
-    bottom: getHeight(10),
-    right: getHeight(10),
-  },
-  textPush: {
-    color: '#fff',
-    fontSize: getHeight(16),
   },
 });
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {getHeight, getWidth, hasNotch} from '@common/index';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function TabBar({
   state,
@@ -48,6 +49,12 @@ export default function TabBar({
             {options.tabBarIcon({
               color: isFocused ? activeTintColor : inactiveTintColor,
             })}
+            {index === 2 && (
+              <LinearGradient
+                colors={['#d90646', '#e22539', '#eb402c']}
+                style={styles.circle}
+              />
+            )}
             {isFocused ? <View style={styles.activeIndicator} /> : null}
           </TouchableOpacity>
         );
@@ -59,11 +66,11 @@ export default function TabBar({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#0ab0da',
-    // backgroundColor: '#f8f8f8',
+    backgroundColor: '#f8f8f8',
     justifyContent: 'space-between',
     paddingHorizontal: getWidth(11),
     paddingBottom: hasNotch() ? getHeight(27) : 0,
+    position: 'relative',
   },
   tab: {
     minWidth: getWidth(60),
@@ -78,5 +85,14 @@ const styles = StyleSheet.create({
     height: getHeight(2),
     width: '100%',
     bottom: 0,
+    zIndex: -1,
+  },
+  circle: {
+    width: getHeight(60),
+    height: getHeight(60),
+    borderRadius: getHeight(30),
+    position: 'absolute',
+    top: getHeight(-25),
+    zIndex: -1,
   },
 });
