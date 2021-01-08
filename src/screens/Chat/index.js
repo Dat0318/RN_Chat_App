@@ -2,12 +2,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {View, Image, Text, Animated, Platform} from 'react-native';
 import styles from './styles';
-import {Header} from '@components';
+import {Header} from '@components/index';
 import LinearGradient from 'react-native-linear-gradient';
 import {Images} from '@config/index';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Toast from 'react-native-simple-toast';
-import {socket, general} from '@services';
+import {socket, general} from '@services/index';
 import moment from 'moment';
 
 const HEADER_MAX_HEIGHT = 100;

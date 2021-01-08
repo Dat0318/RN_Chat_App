@@ -1,75 +1,67 @@
 import {StyleSheet} from 'react-native';
-import {getHeight} from '@common';
+import {getHeight} from '@common/index';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  rectButton: {
-    flex: 1,
-    paddingVertical: getHeight(10),
-    paddingHorizontal: getHeight(15),
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    alignItems: 'center',
-    width: '100%',
-  },
   separator: {
     backgroundColor: 'rgb(200, 199, 204)',
-    height: StyleSheet.hairlineWidth,
   },
-  fromText: {
-    backgroundColor: 'transparent',
-    fontSize: getHeight(18),
-  },
-  messageText: {
-    color: '#999',
-    backgroundColor: 'transparent',
-    fontSize: getHeight(15),
-  },
-  dateText: {
-    color: '#999',
-    fontSize: getHeight(16),
-  },
-  viewImage: {
+  item: {
+    paddingHorizontal: getHeight(20),
+    paddingVertical: getHeight(40),
     position: 'relative',
-  },
-  wrapImage: {
-    width: getHeight(55),
-    height: getHeight(55),
-    borderRadius: getHeight(27.5),
-    overflow: 'hidden',
-  },
-  avatar: {
-    width: getHeight(55),
-    height: getHeight(55),
-    borderRadius: getHeight(27.5),
-    resizeMode: 'cover',
-  },
-  info: {
-    flex: 1,
-    marginLeft: getHeight(15),
-    justifyContent: 'space-between',
-    height: '100%',
-    paddingVertical: getHeight(2),
-  },
-  flexD: {
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    marginVertical: getHeight(10),
+    marginHorizontal: getHeight(20),
+    borderColor: '#b9b9b9',
+    backgroundColor: '#fff',
+    borderRadius: getHeight(5),
+
+    // box shadow
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
-  read: {
-    width: getHeight(15),
-    height: getHeight(15),
-    backgroundColor: '#e32538',
-    borderRadius: getHeight(7.5),
-    borderWidth: getHeight(2),
-    borderColor: '#fff',
+  itemMore: {
     position: 'absolute',
-    top: getHeight(2),
-    right: getHeight(-2),
-    zIndex: 1,
+    top: getHeight(20),
+    right: getHeight(20),
+    transform: [{rotateZ: '90deg'}],
+  },
+  moreIcon: {
+    width: getHeight(20),
+    height: getHeight(20),
+    resizeMode: 'contain',
+    tintColor: '#b9b9b9',
+  },
+  itemTtl: {
+    fontSize: getHeight(20),
+    color: '#363636',
+  },
+  itemDesc: {
+    fontSize: getHeight(13),
+    color: '#b9b9b9',
+    marginVertical: getHeight(15),
+  },
+  itemMembers: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: getHeight(10),
+  },
+  itemAvatar: {
+    width: getHeight(30),
+    height: getHeight(30),
+    borderRadius: getHeight(20),
+    resizeMode: 'cover',
+    marginRight: getHeight(10),
   },
 });
 

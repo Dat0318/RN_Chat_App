@@ -1,7 +1,7 @@
 import {View, TextInput, Image, Text, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
 import styles from './styles';
-import {showErrorField} from '@common';
+import {showErrorField} from '@common/index';
 
 export default class InputCustom extends Component {
   constructor(props) {

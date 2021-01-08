@@ -25,4 +25,7 @@ export const Images = {
   ic_person: require('@assets/images/ic_person.png'),
   ic_plus: require('@assets/images/ic_plus.png'),
   ic_send: require('@assets/images/ic_send.png'),
+  ic_google: require('@assets/images/ic_google.png'),
+  ic_facebook: require('@assets/images/ic_facebook.png'),
+  ic_search: require('@assets/images/ic_search.png'),
 };

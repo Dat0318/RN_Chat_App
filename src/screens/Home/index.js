@@ -81,6 +81,30 @@ const DATA = [
     last_message:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed d',
   },
+  {
+    name: 'Fish Mooney',
+    avatar: Images.ic_avatar2,
+    room_id: 15,
+    isRead: true,
+    updatedAt: '2021-01-08 17:15:35',
+    last_message: 'Please don\'t call me "babes."',
+  },
+  {
+    name: 'Bruce Wayne',
+    avatar: Images.ic_avatar3,
+    room_id: 15,
+    isRead: true,
+    updatedAt: '2021-01-08 09:15:35',
+    last_message: 'Sometimee the right way is also the ugly way.',
+  },
+  {
+    name: 'Barbara Kean',
+    avatar: Images.ic_avatar4,
+    room_id: 15,
+    isRead: true,
+    updatedAt: '2021-01-07 07:15:35',
+    last_message: "It's Gotham, baby, we've all got flair!",
+  },
 ];
 export default function Home({navigation}) {
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -187,8 +211,8 @@ export default function Home({navigation}) {
   const testPush = () => {
     console.log('PUSH TEST');
     PushNotification.localNotification({
-      title: 'My Notification Title', // (optional)
-      message: 'My Notification Message', // (required)
+      title: 'Notification is ready to use', // (optional)
+      message: 'Notification message is here ....', // (required)
     });
   };
 

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getHeight, getWidth, normalize} from '@common';
+import {getHeight, getWidth} from '@common/index';
 const styles = StyleSheet.create({
   linearGradient: {},
 });

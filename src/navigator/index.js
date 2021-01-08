@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {Image} from 'react-native';
 import {Style, getHeight} from '@common/index';
-import {Images} from '@config';
+import {Images} from '@config/index';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -24,7 +24,7 @@ const TabStack = createMaterialTopTabNavigator();
 const TabStackScreen = () => (
   <TabStack.Navigator
     tabBar={(props) => <TabBar {...props} />}
-    initialRouteName={'Home'}
+    initialRouteName={'Profile'}
     swipeEnabled={true}
     lazy={true}
     tabBarPosition={'bottom'}
@@ -69,9 +69,7 @@ const TabStackScreen = () => (
                 width: getHeight(18),
                 height: getHeight(18),
                 position: 'absolute',
-                zIndex: 1,
                 top: getHeight(-5),
-                tintColor: color,
               },
             ]}
           />
@@ -129,7 +127,7 @@ class RootStack extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator headerMode={'none'}>
-          {/* <MainStack.Screen name={'Reset'} component={Reset} /> */}
+          {/* <Stack.Screen name={'Reset'} component={Reset} /> */}
           {LoginStatus.status === false ? (
             <Stack.Screen
               name={'AuthStackScreen'}
@@ -141,7 +139,6 @@ class RootStack extends Component {
               component={MainStackScreen}
             />
           )}
-          <Stack.Screen name={'Reset'} component={Reset} />
           <Stack.Screen name={'MainStack'} component={MainStackScreen} />
         </Stack.Navigator>
       </NavigationContainer>

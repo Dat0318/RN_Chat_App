@@ -99,6 +99,10 @@ export default function Reset({navigation}) {
     );
   };
 
+  const _signOutFacebook = () => {
+    LoginManager.logOut();
+  };
+
   return (
     <View style={{backgroundColor: 'lightblue', flex: 1}}>
       <StatusBar barStyle="dark-content" />
@@ -109,7 +113,7 @@ export default function Reset({navigation}) {
           <Text>content</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={_logout}
+          onPress={_signOutFacebook}
           style={{margin: 20, padding: 10, backgroundColor: 'yellow'}}>
           <Text>Logout</Text>
         </TouchableOpacity>

@@ -1,49 +1,87 @@
 import React, {useEffect, useState} from 'react';
 import {View, Image, Text, RefreshControl, FlatList} from 'react-native';
 import styles from './styles';
-import {Header} from '@components';
+import {Header} from '@components/index';
 import {Images} from '@config/index';
 import {getHeight} from '@common/index';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const DATA = [
   {
-    name: 'Oswald Cobblepot',
-    avatar: Images.ic_avatar1,
-    room_id: 15,
-    isRead: true,
-    updatedAt: '2021-01-08 07:15:35',
-    last_message: "I'm the King of Gotham!",
+    id: 1,
+    title: 'Gotham City Police Department',
+    time: '5 minutes ago',
+    avatars: [
+      Images.ic_avatar1,
+      Images.ic_avatar2,
+      Images.ic_avatar3,
+      Images.ic_avatar4,
+    ],
+  },
+  {
+    id: 2,
+    title: 'Wayne Enterprises',
+    time: '2  days ago',
+    avatars: [
+      Images.ic_avatar1,
+      Images.ic_avatar2,
+      Images.ic_avatar3,
+      Images.ic_avatar4,
+      Images.ic_avatar5,
+    ],
+  },
+  {
+    id: 3,
+    title: 'Falcone Crime Family',
+    time: 'Saturday',
+    avatars: [
+      Images.ic_avatar1,
+      Images.ic_avatar2,
+      Images.ic_avatar3,
+      Images.ic_avatar4,
+      Images.ic_avatar5,
+      Images.ic_avatar4,
+      Images.ic_avatar2,
+    ],
+  },
+  {
+    id: 4,
+    title: 'Arkham Asylum',
+    time: 'Saturday',
+    avatars: [Images.ic_avatar1, Images.ic_avatar3, Images.ic_avatar4],
   },
 ];
-export default function Booking({navigation}) {
+export default function Groups() {
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [dataChat, setDataChat] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Get the device token
+    setData(DATA);
   }, []);
 
-  const onRefresh = () => {
-    setIsRefreshing(true);
-  };
+  const onRefresh = () => {};
 
-  const Row = ({item}) => {
+  const Item = ({item}) => {
     return (
-      <View>
-        <View style={styles.viewImage}>
-          <View style={styles.wrapImage}>
-            <Image source={item.avatar} style={styles.avatar} />
-          </View>
-          {item.isRead === false && <View style={styles.read} />}
+      <View style={styles.item}>
+        <View style={styles.itemMore}>
+          <TouchableOpacity
+            onPress={() => {
+              console.log('Click view more');
+            }}>
+            <Image style={styles.moreIcon} source={Images.ic_dots} />
+          </TouchableOpacity>
         </View>
-        <View style={styles.info}>
-          <View style={styles.flexD}>
-            <Text style={styles.fromText}>{item.name}</Text>
-            <Text style={styles.dateText}>{item.updatedAt}</Text>
-          </View>
-          <Text numberOfLines={1} style={styles.messageText}>
-            {item.last_message}
-          </Text>
+        <Text style={styles.itemTtl}>{item.title}</Text>
+        <Text style={styles.itemDesc}>
+          {item.time + ' • ' + item.avatars.length + ' members '}
+        </Text>
+        <View style={styles.itemMembers}>
+          {item.avatars.map((element, index) => {
+            return (
+              <Image style={styles.itemAvatar} key={index} source={element} />
+            );
+          })}
         </View>
       </View>
     );
@@ -51,11 +89,11 @@ export default function Booking({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Header left="edit" title="Messages" right="info" />
+      <Header left="edit" title="Bookings" right="add" />
       <FlatList
-        data={dataChat}
+        data={data}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
-        renderItem={({item, index}) => <Row item={item} index={index} />}
+        renderItem={({item, index}) => <Item item={item} index={index} />}
         keyExtractor={(item, index) => `message ${index}`}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: getHeight(10)}}

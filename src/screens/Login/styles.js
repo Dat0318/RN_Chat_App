@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getHeight, getWidth, normalize} from '@common';
+import {getHeight} from '@common/index';
 const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
@@ -44,6 +44,24 @@ const styles = StyleSheet.create({
   },
   textSignIn: {
     color: '#fff',
+  },
+  // login social
+  socialGroups: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: getHeight(30),
+  },
+  socialBtn: {
+    width: getHeight(40),
+    height: getHeight(40),
+    borderRadius: getHeight(5),
+    backgroundColor: '#4167b2',
+    marginRight: getHeight(40),
+  },
+  socialIcon: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
   },
 });
 export default styles;

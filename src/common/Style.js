@@ -5,11 +5,11 @@
  * @version 1.0.0
  */
 import {StyleSheet} from 'react-native';
-import {getHeight, getWidth} from './Helper';
+import {getHeight} from './Helper';
 
 export const Style = StyleSheet.create({
   iconTabBottom: {
-    width: getWidth(23),
+    width: getHeight(23),
     height: getHeight(23),
     resizeMode: 'contain',
   },

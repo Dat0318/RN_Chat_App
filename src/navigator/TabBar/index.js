@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
     height: getHeight(2),
     width: '100%',
     bottom: 0,
-    zIndex: -1,
   },
   circle: {
     width: getHeight(60),

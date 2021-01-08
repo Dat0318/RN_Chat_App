@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-import {Config} from '@config';
+import {Config} from '@config/index';
 class Socket {
   constructor() {
     this.socket = null;

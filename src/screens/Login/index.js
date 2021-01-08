@@ -1,15 +1,11 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import {InputCustom} from '@components/index';
 import {LoginStatus} from '@stores/index';
-import {
-  _signInGoogle,
-  _signInFacebook,
-  _signOutGoogle,
-  _signOutFacebook,
-} from '@common/index';
+import {_signInGoogle, _signInFacebook, Images} from '@common/index';
 
 export default function Login({navigation}) {
   const [email, onChangeEmail] = React.useState('');
@@ -18,7 +14,6 @@ export default function Login({navigation}) {
   const [statusLogin, setStatusLogin] = React.useState(true);
 
   useEffect(() => {
-    console.log('statusLogin: ', statusLogin);
     if (statusLogin) {
       onChangeEmail('johndoe@symu.co');
       onChangePassWord('123456');
@@ -35,6 +30,18 @@ export default function Login({navigation}) {
       onChangeEmail('');
       onChangePassWord('');
       onChangeRePassWord('');
+    }
+  };
+
+  const loginSocial = async (val) => {
+    if (val === 'fb') {
+      await _signInFacebook();
+      await LoginStatus.changeStatus(true);
+    } else if (val === 'gg') {
+      await _signInGoogle(() => {
+        console.log(123);
+      });
+      await LoginStatus.changeStatus(true);
     }
   };
 
@@ -83,6 +90,23 @@ export default function Login({navigation}) {
             Already have an account? {statusLogin ? 'Sign up' : 'Sign in'}
           </Text>
         </TouchableOpacity>
+        {statusLogin && (
+          <View style={styles.socialGroups}>
+            <TouchableOpacity
+              style={styles.socialBtn}
+              onPress={() => loginSocial('fb')}>
+              <Image style={styles.socialIcon} source={Images.ic_facebook} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.socialBtn,
+                {marginRight: 0, backgroundColor: '#fff'},
+              ]}
+              onPress={() => loginSocial('gg')}>
+              <Image style={styles.socialIcon} source={Images.ic_google} />
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     </LinearGradient>
   );

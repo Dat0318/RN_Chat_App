@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Config} from '@config';
+import {Config} from '@config/index';
 import Toast from 'react-native-simple-toast';
 import {lang} from '@assets/language/i18n';
 export const Request = {

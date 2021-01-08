@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
 import styles from './styles';
@@ -19,7 +20,7 @@ export class Header extends Component {
 
   renderLeft = () => {
     if (typeof this.props.left !== 'undefined' && this.props.left === 'edit') {
-      return <Text style={styles.edit}>Edit</Text>;
+      return <Text style={[styles.edit, this.props.leftStyle]}>Edit</Text>;
     } else if (this.props.left === 'back') {
       return <Image style={styles.icon} source={Images.ic_info} />;
     } else if (this.props.left === 'search') {
@@ -29,28 +30,30 @@ export class Header extends Component {
   };
 
   renderRight = () => {
-    if (
-      typeof this.props.right !== 'undefined' &&
-      this.props.right === 'search'
-    ) {
+    if (this.props.right === 'search') {
       return <Image style={styles.icon} source={Images.ic_delete} />;
-    } else if (
-      typeof this.props.right !== 'undefined' &&
-      this.props.right === 'add'
-    ) {
+    } else if (this.props.right === 'add') {
+      return <Image style={styles.icon} source={Images.ic_plus} />;
+    } else if (this.props.right === 'info') {
       return <Image style={styles.icon} source={Images.ic_info} />;
-    } else if (
-      typeof this.props.right !== 'undefined' &&
-      this.props.right === 'info'
-    ) {
-      return <Image style={styles.icon} source={Images.ic_info} />;
+    } else if (this.props.right === 'logout') {
+      return (
+        <Image
+          style={[styles.icon, {tintColor: '#fff'}]}
+          source={Images.ic_logout}
+        />
+      );
     }
     return null;
   };
 
   render() {
     return (
-      <View style={styles.header}>
+      <View
+        style={[
+          styles.header,
+          this.props.leftStyle !== undefined && {borderBottomWidth: 0},
+        ]}>
         <StatusBar
           translucent
           barStyle="dark-content"

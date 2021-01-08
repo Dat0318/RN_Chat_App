@@ -1,75 +1,78 @@
 import {StyleSheet} from 'react-native';
-import {getHeight} from '@common';
+import {getHeight} from '@common/index';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  rectButton: {
+  //
+  scroll: {
     flex: 1,
-    paddingVertical: getHeight(10),
-    paddingHorizontal: getHeight(15),
-    justifyContent: 'space-between',
+    backgroundColor: '#fff',
+  },
+  search: {},
+  searchBox: {
     flexDirection: 'row',
-    backgroundColor: 'white',
+    justifyContent: 'center',
+  },
+  searchIcon: {
+    width: getHeight(20),
+    height: getHeight(20),
+    resizeMode: 'contain',
+  },
+  searchText: {
+    fontSize: getHeight(19),
+    color: '#b9b9b9',
+  },
+  //
+  title: {
+    backgroundColor: '#f8f8f8',
+    paddingHorizontal: getHeight(15),
+    paddingVertical: getHeight(10),
+    borderBottomColor: '#e0e0e0',
+    borderBottomWidth: getHeight(1),
+  },
+  titleText: {
+    fontSize: getHeight(19),
+    color: '#b9b9b9',
+  },
+  titleTextRed: {
+    color: '#df1a3d',
+  },
+  //
+  item: {
+    paddingHorizontal: getHeight(15),
+    paddingVertical: getHeight(10),
+    borderBottomColor: '#e0e0e0',
+    borderBottomWidth: getHeight(1),
+    flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
   },
-  separator: {
-    backgroundColor: 'rgb(200, 199, 204)',
-    height: StyleSheet.hairlineWidth,
-  },
-  fromText: {
-    backgroundColor: 'transparent',
-    fontSize: getHeight(18),
-  },
-  messageText: {
-    color: '#999',
-    backgroundColor: 'transparent',
-    fontSize: getHeight(15),
-  },
-  dateText: {
-    color: '#999',
-    fontSize: getHeight(16),
-  },
-  viewImage: {
-    position: 'relative',
-  },
-  wrapImage: {
-    width: getHeight(55),
-    height: getHeight(55),
-    borderRadius: getHeight(27.5),
+  itemAvatar: {
+    width: getHeight(50),
+    height: getHeight(50),
+    borderRadius: getHeight(25),
+    resizeMode: 'cover',
     overflow: 'hidden',
   },
-  avatar: {
-    width: getHeight(55),
-    height: getHeight(55),
-    borderRadius: getHeight(27.5),
-    resizeMode: 'cover',
+  moreImage: {
+    width: getHeight(50),
+    height: getHeight(50),
   },
-  info: {
+  itemDots: {},
+  itemName: {
     flex: 1,
     marginLeft: getHeight(15),
-    justifyContent: 'space-between',
-    height: '100%',
-    paddingVertical: getHeight(2),
   },
-  flexD: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  itemGroupBtn: {flexDirection: 'row'},
+  itemBtn: {
+    marginRight: getHeight(10),
   },
-  read: {
-    width: getHeight(15),
-    height: getHeight(15),
-    backgroundColor: '#e32538',
-    borderRadius: getHeight(7.5),
-    borderWidth: getHeight(2),
-    borderColor: '#fff',
-    position: 'absolute',
-    top: getHeight(2),
-    right: getHeight(-2),
-    zIndex: 1,
+  itemIcon: {
+    width: getHeight(20),
+    height: getHeight(23),
+    resizeMode: 'contain',
+    tintColor: '#b9b9b9',
   },
 });
 
