@@ -24,7 +24,7 @@ const TabStack = createMaterialTopTabNavigator();
 const TabStackScreen = () => (
   <TabStack.Navigator
     tabBar={(props) => <TabBar {...props} />}
-    initialRouteName={'Profile'}
+    initialRouteName={'Home'}
     swipeEnabled={true}
     lazy={true}
     tabBarPosition={'bottom'}

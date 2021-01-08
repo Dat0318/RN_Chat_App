@@ -28,4 +28,6 @@ export const Images = {
   ic_google: require('@assets/images/ic_google.png'),
   ic_facebook: require('@assets/images/ic_facebook.png'),
   ic_search: require('@assets/images/ic_search.png'),
+  ic_logout: require('@assets/images/ic_logout.png'),
+  ic_arrow_right: require('@assets/images/ic_arrow_right.png'),
 };

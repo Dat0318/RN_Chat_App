@@ -10,15 +10,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  search: {},
+  search: {
+    backgroundColor: '#e6e6e6',
+    paddingVertical: getHeight(15),
+    paddingHorizontal: getHeight(15),
+  },
   searchBox: {
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingVertical: getHeight(10),
+    borderRadius: getHeight(8),
   },
   searchIcon: {
-    width: getHeight(20),
-    height: getHeight(20),
+    width: getHeight(15),
+    height: getHeight(15),
     resizeMode: 'contain',
+    marginRight: getHeight(5),
   },
   searchText: {
     fontSize: getHeight(19),

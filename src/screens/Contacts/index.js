@@ -87,13 +87,13 @@ export default function Groups() {
   return (
     <View style={styles.container}>
       <Header left="edit" title="Contacts" right="add" />
-      <ScrollView style={styles.scroll}>
-        <View style={styles.search}>
-          <View style={styles.searchBox}>
-            <Image style={styles.searchIcon} source={Images.ic_search} />
-            <Text style={styles.searchText}>Search friends</Text>
-          </View>
+      <View style={styles.search}>
+        <View style={styles.searchBox}>
+          <Image style={styles.searchIcon} source={Images.ic_search} />
+          <Text style={styles.searchText}>Search friends</Text>
         </View>
+      </View>
+      <ScrollView style={styles.scroll}>
         <View style={styles.title}>
           <Text style={styles.titleText}>
             Online (
